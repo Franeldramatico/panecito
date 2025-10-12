@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miku x Eminem - Fusión Artística</title>
+    
+    <!-- Bootstrap CSS Local -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(10, 10, 31, 0.95); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-stars me-2"></i>
+                MIKU × EMINEM
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#music">Música</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Fusión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4 neon-glow">
+                        <span class="gradient-text">FUSIÓN</span><br>
+                        <span style="color: var(--miku-blue)">DIGITAL</span> × 
+                        <span style="color: var(--eminem-yellow)">RAP</span>
+                    </h1>
+                    <p class="lead mb-4 fade-in" style="font-size: 1.3rem;">
+                        Una experiencia inmersiva que combina el universo vocaloid de 
+                        <span style="color: var(--miku-blue)">Hatsune Miku</span> con el 
+                        legado del rap de <span style="color: var(--eminem-yellow)">Eminem</span>. 
+                        Dos iconos, un mismo escenario.
+                    </p>
+                    <button class="btn btn-fusion btn-lg me-3" onclick="showWelcomeAlert()">
+                        <i class="bi bi-play-fill me-2"></i>Explorar Fusión
+                    </button>
+                    <button class="btn btn-outline-light btn-lg" onclick="playRandomSong()">
+                        <i class="bi bi-music-note-beamed me-2"></i>Reproducir Mix
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="fusion-card p-4 text-center">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="p-3">
+                                    <i class="bi bi-mic-fill" style="font-size: 3rem; color: var(--eminem-yellow);"></i>
+                                    <h5 class="mt-2" style="color: var(--eminem-yellow)">Eminem</h5>
+                                    <small>Rap Legend</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3">
+                                    <i class="bi bi-music-note-list" style="font-size: 3rem; color: var(--miku-blue);"></i>
+                                    <h5 class="mt-2" style="color: var(--miku-blue)">Hatsune Miku</h5>
+                                    <small>Vocaloid Icon</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lyric-highlight">
+                            "La realidad del sueño, el sueño de la realidad"<br>
+                            <small>- Fusión Digital</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="gradient-text display-5 fw-bold neon-glow">Galería de Fusión</h2>
+                <p class="lead">Arte colaborativo que une dos mundos aparentemente distantes</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="fusion-card h-100 p-3">
+                        <div class="gallery-item" onclick="showImageAlert('https://preview.redd.it/hatsune-miku-x-eminem-godzilla-art-by-reisame-9-v0-9pjwdsjdgqae1.jpeg?auto=webp&s=5dc485f78f89fc1f36c375b67acf2f386fc79079', 'Miku en Detroit')">
+                            <img src="https://preview.redd.it/hatsune-miku-x-eminem-godzilla-art-by-reisame-9-v0-9pjwdsjdgqae1.jpeg?auto=webp&s=5dc485f78f89fc1f36c375b67acf2f386fc79079" alt="Arte de Miku en Detroit, fusionando estilos con Eminem" style="width: 100%; height: 250px; object-fit: cover;">
+                        </div>
+                        <div class="p-3">
+                            <h5 style="color: var(--miku-blue)">Miku en Detroit</h5>
+                            <p>Representación artística de Miku en el entorno urbano que vio nacer a Eminem.</p>
+                            <button class="btn btn-sm btn-outline-light" onclick="showImageAlert('https://preview.redd.it/hatsune-miku-x-eminem-godzilla-art-by-reisame-9-v0-9pjwdsjdgqae1.jpeg?auto=webp&s=5dc485f78f89fc1f36c375b67acf2f386fc79079', 'Miku en Detroit')">Ver Arte</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="fusion-card h-100 p-3">
+                        <div class="gallery-item" onclick="showImageAlert('https://i.pinimg.com/736x/00/99/8e/00998e173e4d6a2a5c448c7dc00ff978.jpg', 'Colaboración Digital')">
+                            <img src="https://i.pinimg.com/736x/00/99/8e/00998e173e4d6a2a5c448c7dc00ff978.jpg" alt="Arte digital fusionando Hatsune Miku y Eminem en estilo chibi" style="width: 100%; height: 250px; object-fit: cover;">
+                        </div>
+                        <div class="p-3">
+                            <h5 style="color: var(--eminem-yellow)">Colaboración Digital</h5>
+                            <p>Fusión estética donde los elementos de ambos artistas se entrelazan.</p>
+                            <button class="btn btn-sm btn-outline-light" onclick="showImageAlert('https://i.pinimg.com/736x/00/99/8e/00998e173e4d6a2a5c448c7dc00ff978.jpg', 'Colaboración Digital')">Ver Arte</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="fusion-card h-100 p-3">
+                        <div class="gallery-item" onclick="showImageAlert('images/mikueminem.jpg', 'Fandom Creativo')">
+                            <img src="images/mikueminem.jpg" alt="Obra de fan celebrando la unión de Hatsune Miku y Eminem" style="width: 100%; height: 250px; object-fit: cover;">
+                        </div>
+                        <div class="p-3">
+                            <h5 style="color: var(--miku-blue)">Fandom Creativo</h5>
+                            <p>Obras de fans que celebran la unión de estas dos leyendas musicales.</p>
+                            <button class="btn btn-sm btn-outline-light" onclick="showImageAlert('images/mikueminem.jpg', 'Fandom Creativo')">Ver Arte</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="py-5" style="background: rgba(0, 0, 0, 0.3);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="gradient-text display-5 fw-bold neon-glow">Experiencia Musical</h2>
+                <p class="lead">La esencia sonora de dos universos musicales fusionados</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="fusion-card h-100 p-4">
+                        <h4 style="color: var(--miku-blue)" class="mb-4">
+                            <i class="bi bi-music-note-beamed me-2"></i>Hatsune Miku
+                        </h4>
+                        <div class="music-player mb-4">
+                            <h6>World is Mine</h6>
+                            <div class="progress mb-2" style="height: 5px; background: rgba(255,255,255,0.2);">
+                                <div class="progress-bar" style="background: var(--miku-blue); width: 70%;"></div>
+                            </div>
+                            <small>2:45 / 3:50</small>
+                        </div>
+                        
+                        <div class="music-player mb-4">
+                            <h6>Senbonzakura</h6>
+                            <div class="progress mb-2" style="height: 5px; background: rgba(255,255,255,0.2);">
+                                <div class="progress-bar" style="background: var(--miku-blue); width: 40%;"></div>
+                            </div>
+                            <small>1:20 / 4:15</small>
+                        </div>
+                        
+                        <button class="btn btn-outline-primary w-100" style="border-color: var(--miku-blue); color: var(--miku-blue);" onclick="playMikuSong()">
+                            <i class="bi bi-play-circle me-2"></i>Reproducir Playlist Miku
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="fusion-card h-100 p-4">
+                        <h4 style="color: var(--eminem-yellow)" class="mb-4">
+                            <i class="bi bi-mic-fill me-2"></i>Eminem
+                        </h4>
+                        <div class="music-player mb-4">
+                            <h6>Lose Yourself</h6>
+                            <div class="progress mb-2" style="height: 5px; background: rgba(255,255,255,0.2);">
+                                <div class="progress-bar" style="background: var(--eminem-yellow); width: 60%;"></div>
+                            </div>
+                            <small>2:15 / 5:20</small>
+                        </div>
+                        
+                        <div class="music-player mb-4">
+                            <h6>Godzilla (feat. Juice WRLD)</h6>
+                            <div class="progress mb-2" style="height: 5px; background: rgba(255,255,255,0.2);">
+                                <div class="progress-bar" style="background: var(--eminem-yellow); width: 80%;"></div>
+                            </div>
+                            <small>3:00 / 3:30</small>
+                        </div>
+                        
+                        <button class="btn btn-outline-warning w-100" style="border-color: var(--eminem-yellow); color: var(--eminem-yellow);" onclick="playEminemSong()">
+                            <i class="bi bi-play-circle me-2"></i>Reproducir Playlist Eminem
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <div class="fusion-card p-4">
+                    <h5 class="gradient-text">Mix de Fusión Exclusivo</h5>
+                    <p class="mb-3">Experimenta la combinación única de vocaloid y rap en este mix especial creado por la comunidad.</p>
+                    <button class="btn btn-fusion" onclick="playFusionMix()">
+                        <i class="bi bi-lightning-charge me-2"></i>Reproducir Mix de Fusión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="gradient-text display-6 fw-bold mb-4 neon-glow">La Fusión Imposible</h2>
+                    <p class="mb-4">
+                        Esta experiencia web representa la unión de dos iconos musicales de generaciones 
+                        y culturas aparentemente opuestas: <span style="color: var(--miku-blue)">Hatsune Miku</span>, 
+                        la diva virtual japonesa que revolucionó la música digital, y 
+                        <span style="color: var(--eminem-yellow)">Eminem</span>, el rapero de Detroit 
+                        que transformó el hip-hop mundial.
+                    </p>
+                    <p class="mb-4">
+                        A través de esta fusión artística, exploramos cómo la tecnología y el arte pueden 
+                        unir universos creativos distantes, creando una experiencia estética única que 
+                        trasciende géneros y fronteras culturales.
+                    </p>
+                    <button class="btn btn-fusion" onclick="showFusionStory()">
+                        <i class="bi bi-book me-2"></i>Conoce la Historia
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="fusion-card p-4">
+                        <h5 class="text-center mb-4">Línea Temporal de la Fusión</h5>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: var(--eminem-yellow); color: black;">
+                                <i class="bi bi-vinyl-fill"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0" style="color: var(--eminem-yellow)">1996 - Inicio de Eminem</h6>
+                                <small>Lanzamiento de Infinite</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: var(--miku-blue); color: black;">
+                                <i class="bi bi-music-note"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0" style="color: var(--miku-blue)">2007 - Nace Hatsune Miku</h6>
+                                <small>Lanzamiento del software Vocaloid</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--miku-blue) 0%, var(--eminem-yellow) 100%); color: black;">
+                                <i class="bi bi-stars"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 gradient-text">2018 - Primera Fusión</h6>
+                                <small>Primeros remixes de la comunidad</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--eminem-yellow) 0%, var(--miku-blue) 100%); color: black;">
+                                <i class="bi bi-globe"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 gradient-text">2023 - Proyecto Global</h6>
+                                <small>Expansión de la comunidad mundial</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="gradient-text">MIKU × EMINEM</h4>
+                    <p>Un proyecto de fusión artística que celebra la creatividad sin fronteras y la unión de culturas a través de la música y la tecnología.</p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: var(--miku-blue)">Enlaces Oficiales</h5>
+                    <div class="d-flex justify-content-center my-3">
+                        <a href="#" class="social-icon" onclick="showSocialAlert('YouTube'); return false;"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-icon" onclick="showSocialAlert('Spotify'); return false;"><i class="bi bi-spotify"></i></a>
+                        <a href="#" class="social-icon" onclick="showSocialAlert('Twitter'); return false;"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-icon" onclick="showSocialAlert('Instagram'); return false;"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5 style="color: var(--eminem-yellow)">Comunidad</h5>
+                    <p>Únete a nuestra comunidad de fans y creadores para explorar más fusiones artísticas y colaboraciones.</p>
+                    <button class="btn btn-outline-light btn-sm" onclick="joinCommunity()">
+                        <i class="bi bi-discord me-1"></i> Unirse al Discord
+                    </button>
+                </div>
+            </div>
+            
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="text-center py-3">
+                <small>&copy; 2025 Miku x Eminem Fusion Project. Sitio creado con fines artísticos y educativos. (tambien esta pagina esta dedicada para Aranxita :3)</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Music Modal -->
+    <div class="modal fade" id="musicModal" tabindex="-1" aria-labelledby="musicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background: var(--card-bg); color: white;">
+                <div class="modal-header">
+                    <h5 class="modal-title gradient-text" id="musicModalLabel">Reproduciendo Música</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="musicIframe" width="100%" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Local -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
